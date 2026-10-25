@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Fabric Loom / 実行環境
+run/
+remappedSrc/
+.fabric/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+bin/
+
+# Claude Code のローカル設定
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,258 @@
+# ============================================
+# Auto Name Tag - name list
+# ============================================
+# Location: .minecraft/mods/names.txt
+#
+# Format:
+#   [entity_id] # mob name
+#   Name 1
+#   Name 2
+#
+# - Write one name per line
+# - If a mob has several names, one is picked at random
+# - Lines starting with # are comments (ignored)
+# - Only mobs that have names listed here get named
+#   (leave a mob without names if you don't want it named)
+# - For mobs from other mods, use [modid:entity_id]
+# - After editing, run /animalnamer reload in game to apply
+#   without restarting (requires OP)
+# - To always show names or to use special-effect names,
+#   edit config/animalnamer.properties
+#
+# - The "Animal Guide" item (crafted from a book + wheat) lets you
+#   browse and edit the names of every mob and change the settings
+#
+# In-game commands (require OP):
+#   /animalnamer add <mob> <name>       add a name
+#   /animalnamer remove <mob> <name>    remove a name
+#   /animalnamer list [mob]             show registered names
+#   /animalnamer nameall                name every unnamed mob in loaded chunks
+#   /animalnamer showname on|off        always show names above mobs
+#   /animalnamer special on|off         give special-effect names to all mobs
+#   /animalnamer special chance <0-100> chance of a special name
+# ============================================
+
+# ============================================
+# Passive mobs (never attack you)  33 types
+# ============================================
+
+[sheep] # Sheep
+Fluffy
+Woolly
+Cotton
+Cloud
+
+[cow] # Cow
+Bessie
+Daisy
+Moomoo
+
+[pig] # Pig
+Truffle
+Hamlet
+Oinkers
+
+[chicken] # Chicken
+Nugget
+Pecky
+Henrietta
+
+[horse] # Horse
+Dash
+Clover
+
+[cat] # Cat
+Whiskers
+Mittens
+
+[rabbit] # Rabbit
+Hopper
+Bun
+
+[turtle] # Turtle
+Shelly
+Drift
+
+[sniffer] # Sniffer
+Snuffles
+Sprout
+
+[armadillo] # Armadillo
+Roly
+Armor
+
+[mooshroom] # Mooshroom
+Shroom
+
+[axolotl] # Axolotl
+Axel
+Bubbles
+
+[squid] # Squid
+Inky
+
+[glow_squid] # Glow Squid
+Glimmer
+
+[frog] # Frog
+Ribbit
+Hoppy
+
+[ocelot] # Ocelot
+Dapple
+
+[parrot] # Parrot
+Chatter
+Kiwi
+
+[strider] # Strider
+Strutter
+
+[skeleton_horse] # Skeleton Horse
+Bones
+
+[zombie_horse] # Zombie Horse
+Rot
+
+[donkey] # Donkey
+
+[mule] # Mule
+
+[camel] # Camel
+
+[allay] # Allay
+
+[bat] # Bat
+
+[cod] # Cod
+
+[pufferfish] # Pufferfish
+
+[salmon] # Salmon
+
+[snow_golem] # Snow Golem
+
+[tadpole] # Tadpole
+
+[tropical_fish] # Tropical Fish
+
+[villager] # Villager
+
+[wandering_trader] # Wandering Trader
+
+# ============================================
+# Neutral mobs (attack under certain conditions)  16 types
+# ============================================
+
+[wolf] # Wolf
+Shadow
+Fang
+
+[fox] # Fox
+Rusty
+Ember
+
+[panda] # Panda
+Bamboo
+Mochi
+
+[goat] # Goat
+Billy
+Pebble
+
+[bee] # Bee
+Buzz
+Honey
+
+[polar_bear] # Polar Bear
+Snowball
+Frost
+
+[dolphin] # Dolphin
+Splash
+Echo
+
+[llama] # Llama
+
+[trader_llama] # Trader Llama
+
+[iron_golem] # Iron Golem
+
+[cave_spider] # Cave Spider
+
+[drowned] # Drowned
+
+[enderman] # Enderman
+
+[piglin] # Piglin
+
+[spider] # Spider
+
+[zombified_piglin] # Zombified Piglin
+
+# ============================================
+# Hostile mobs (attack on sight)  31 types
+# ============================================
+
+[hoglin] # Hoglin
+Tusk
+
+[blaze] # Blaze
+
+[bogged] # Bogged
+
+[breeze] # Breeze
+
+[creeper] # Creeper
+
+[elder_guardian] # Elder Guardian
+
+[ender_dragon] # Ender Dragon
+
+[endermite] # Endermite
+
+[evoker] # Evoker
+
+[ghast] # Ghast
+
+[guardian] # Guardian
+
+[husk] # Husk
+
+[magma_cube] # Magma Cube
+
+[phantom] # Phantom
+
+[piglin_brute] # Piglin Brute
+
+[pillager] # Pillager
+
+[ravager] # Ravager
+
+[shulker] # Shulker
+
+[silverfish] # Silverfish
+
+[skeleton] # Skeleton
+
+[slime] # Slime
+
+[stray] # Stray
+
+[vex] # Vex
+
+[vindicator] # Vindicator
+
+[warden] # Warden
+
+[witch] # Witch
+
+[wither] # Wither
+
+[wither_skeleton] # Wither Skeleton
+
+[zoglin] # Zoglin
+
+[zombie] # Zombie
+
+[zombie_villager] # Zombie Villager

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "animalnamer",
+  "version": "${version}",
+  "name": "Auto Name Tag",
+  "description": "スポーン・繁殖したMOBに、自分で決めた名前を自動で付けます。名前はアイテム「どうぶつ名鑑」やコマンドで、ゲーム中に追加・編集できます。 / Automatically gives your own names to mobs when they spawn or are bred. Manage the name lists in game with the Animal Guide book or commands.",
+  "authors": ["カズアキ"],
+  "icon": "assets/animalnamer/icon.png",
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "kazuaki.animalnamer.AnimalNamerMod"
+    ],
+    "client": [
+      "kazuaki.animalnamer.client.AnimalNamerClient"
+    ]
+  },
+  "mixins": [
+    "animalnamer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": "*",
+    "minecraft": ">=1.21 <1.21.2"
+  }
+}

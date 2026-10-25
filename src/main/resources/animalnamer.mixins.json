@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "kazuaki.animalnamer.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "MobSpawnMixin",
+    "AnimalBreedMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
