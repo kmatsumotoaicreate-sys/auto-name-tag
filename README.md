@@ -22,6 +22,7 @@ This mod doesn't hand out names from a fixed built-in list. **You decide which m
 Open the Animal Guide book and each spread shows the mob on the left and its names on the right. **Add and remove names, and add or delete whole pages, right inside the book.** You never have to open a config file.
 
 - You receive one copy the first time you join a world (or craft it from a book and wheat)
+- Jump to any mob from the contents page, or search by mob name, ID or registered name
 - Add a page with one click from the list of mobs that have no names yet
 - Change settings on the last page
 

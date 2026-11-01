@@ -15,6 +15,7 @@ Open the Animal Guide book and each spread shows the mob on the left and its nam
 **Add and remove names, and add or delete whole pages, right inside the book.** You never have to open a config file.
 
 - You receive one copy the first time you join a world (or craft it from a book and wheat)
+- Jump to any mob from the contents page, or search by mob name, ID or registered name
 - Add a page with one click from the list of mobs that have no names yet
 - Change settings on the last page
 
@@ -107,6 +108,7 @@ Auto Name Tag は、MOBがスポーンしたり繁殖で生まれたりした瞬
 設定ファイルを開かなくても、**本の中で名前の追加・削除、ページの追加・削除ができます。**
 
 - 初めてワールドに入ったときに1冊もらえます（本 + 小麦でも作れます）
+- 目次から、MOB名・ID・登録した名前で検索してすぐ移動
 - 「まだ名前のないMOB」の一覧から、ワンクリックでページを追加
 - 最後のページで各種設定を切り替え
 
