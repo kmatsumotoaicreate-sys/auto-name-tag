@@ -22,14 +22,10 @@ public class MobSpawnMixin {
             EntityData entityData,
             CallbackInfoReturnable<EntityData> cir
     ) {
-        // 自然スポーン・チャンク生成・スポーンエッグのみ対象
+        // 対象のスポーン理由は AnimalNamerMod.NAMED_SPAWN_REASONS
         // ※繁殖は AnimalBreedMixin で別途処理
-        if (spawnReason != SpawnReason.NATURAL
-                && spawnReason != SpawnReason.CHUNK_GENERATION
-                && spawnReason != SpawnReason.SPAWN_EGG) {
-            return;
+        if (AnimalNamerMod.NAMED_SPAWN_REASONS.contains(spawnReason)) {
+            AnimalNamerMod.applyName((MobEntity) (Object) this);
         }
-
-        AnimalNamerMod.applyName((MobEntity) (Object) this);
     }
 }

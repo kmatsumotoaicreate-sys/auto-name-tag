@@ -28,7 +28,7 @@ Open the Animal Guide book and each spread shows the mob on the left and its nam
 
 ### Babies get names too
 
-Besides natural spawns, world generation and spawn eggs, **babies born from breeding are named as well**.
+Besides natural spawns, world generation, village animals, wandering traders, patrols, raids and spawn eggs, **babies born from breeding are named as well**.
 
 ### Easter-egg names, on your terms
 

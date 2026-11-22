@@ -3,17 +3,31 @@ package kazuaki.animalnamer;
 import kazuaki.animalnamer.network.GuideNetworking;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.EnumSet;
+import java.util.Set;
 
 public class AnimalNamerMod implements ModInitializer {
 
     public static final String MOD_ID = "animalnamer";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+    /**
+     * 名前を付けるスポーン理由。ワールドに出てくるMOBが対象（スポナー・バケツ・変身などは対象外）。
+     * STRUCTURE: 村と一緒に生成されるネコ・ウマなど / MOB_SUMMONED: 村人が呼ぶアイアンゴーレム /
+     * EVENT: 行商人・襲撃 / PATROL: 略奪隊 / DISPENSER: ディスペンサーのスポーンエッグ
+     */
+    public static final Set<SpawnReason> NAMED_SPAWN_REASONS = EnumSet.of(
+        SpawnReason.NATURAL, SpawnReason.CHUNK_GENERATION, SpawnReason.STRUCTURE,
+        SpawnReason.SPAWN_EGG, SpawnReason.DISPENSER, SpawnReason.MOB_SUMMONED,
+        SpawnReason.EVENT, SpawnReason.PATROL, SpawnReason.COMMAND
+    );
 
     @Override
     public void onInitialize() {
