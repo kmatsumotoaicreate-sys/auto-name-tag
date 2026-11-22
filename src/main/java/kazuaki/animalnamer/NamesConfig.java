@@ -40,6 +40,9 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public final class NamesConfig {
 
+    // 以前の版の names.txt に項目がないバニラのMOB
+    private static final Set<String> NEWER_VANILLA_MOBS = Set.of("creaking");
+
     private static final Logger LOGGER = LoggerFactory.getLogger(AnimalNamerMod.MOD_ID);
     private static final String DEFAULT_RESOURCE = "/animalnamer_default_names.txt";
     private static final String DEFAULT_RESOURCE_EN = "/animalnamer_default_names_en.txt";
@@ -275,7 +278,7 @@ public final class NamesConfig {
         for (EntityType<?> type : Registries.ENTITY_TYPE) {
             Identifier id = Registries.ENTITY_TYPE.getId(type);
             // 能力値（体力など）を持つ＝生き物。矢や乗り物などは対象外
-            if (Identifier.DEFAULT_NAMESPACE.equals(id.getNamespace()) || !DefaultAttributeRegistry.hasDefinitionFor(type)) {
+            if (!isAddable(id, type)) {
                 continue;
             }
             if (known.contains(id.toString()) || known.contains(id.getPath())) {
@@ -309,6 +312,14 @@ public final class NamesConfig {
         reload();
         LOGGER.info("[Auto Name Tag] Added {} mob types from other mods to names.txt", headers.size());
         return headers.size();
+    }
+
+    /** names.txt に自動で追記するMOB。他のMODの生き物と、古い names.txt にはないバニラの新しいMOB。 */
+    private static boolean isAddable(Identifier id, EntityType<?> type) {
+        if (Identifier.DEFAULT_NAMESPACE.equals(id.getNamespace())) {
+            return NEWER_VANILLA_MOBS.contains(id.getPath());
+        }
+        return DefaultAttributeRegistry.hasDefinitionFor(type);
     }
 
     /** 名前として使える文字列か（空・長すぎ・# や [ で始まるものは不可）。 */

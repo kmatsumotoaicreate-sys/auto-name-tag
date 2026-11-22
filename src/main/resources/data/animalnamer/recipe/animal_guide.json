@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:book"
-    },
-    {
-      "item": "minecraft:wheat"
-    }
+    "minecraft:book",
+    "minecraft:wheat"
   ],
   "result": {
     "id": "animalnamer:animal_guide",

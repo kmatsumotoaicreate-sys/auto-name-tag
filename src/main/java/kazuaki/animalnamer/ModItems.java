@@ -7,6 +7,8 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
@@ -15,10 +17,13 @@ public final class ModItems {
     // 配布済みの目印。コマンドタグはプレイヤーデータに保存され、リスポーン後も引き継がれる
     private static final String GUIDE_GIVEN_TAG = "animalnamer_guide_given";
 
+    private static final RegistryKey<Item> ANIMAL_GUIDE_KEY =
+        RegistryKey.of(RegistryKeys.ITEM, Identifier.of(AnimalNamerMod.MOD_ID, "animal_guide"));
+
     public static final Item ANIMAL_GUIDE = Registry.register(
         Registries.ITEM,
-        Identifier.of(AnimalNamerMod.MOD_ID, "animal_guide"),
-        new AnimalGuideItem(new Item.Settings().maxCount(1)));
+        ANIMAL_GUIDE_KEY,
+        new AnimalGuideItem(new Item.Settings().registryKey(ANIMAL_GUIDE_KEY).maxCount(1)));
 
     private ModItems() {
     }

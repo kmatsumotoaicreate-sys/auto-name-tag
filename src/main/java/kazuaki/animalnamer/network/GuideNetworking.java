@@ -72,7 +72,7 @@ public final class GuideNetworking {
         if (!canEdit(player)) {
             return;
         }
-        Optional<EntityType<?>> type = Registries.ENTITY_TYPE.getOrEmpty(payload.entityId());
+        Optional<EntityType<?>> type = Registries.ENTITY_TYPE.getOptionalValue(payload.entityId());
         if (type.isEmpty()) {
             return;
         }

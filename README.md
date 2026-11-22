@@ -5,7 +5,7 @@
 Auto Name Tag gives a name to mobs the moment they spawn or are bred, picked at random from **a name list you write for each kind of mob**. No more hunting for name tags and renaming animals one by one at an anvil.
 
 [![Download on CurseForge](https://img.shields.io/badge/CurseForge-Download-orange)](https://www.curseforge.com/minecraft/mc-mods/auto-name-tag)
-![Minecraft 1.21 / 1.21.1](https://img.shields.io/badge/Minecraft-1.21%20%7C%201.21.1-brightgreen)
+![Minecraft 1.21 / 1.21.1 / 1.21.4](https://img.shields.io/badge/Minecraft-1.21%20%7C%201.21.1%20%7C%201.21.4-brightgreen)
 ![Fabric](https://img.shields.io/badge/Loader-Fabric-blue)
 ![License MIT](https://img.shields.io/badge/License-MIT-lightgrey)
 
@@ -28,7 +28,7 @@ Open the Animal Guide book and each spread shows the mob on the left and its nam
 
 ### Babies get names too
 
-Besides natural spawns, world generation and spawn eggs, **babies born from breeding are named as well**.
+Besides natural spawns, world generation, village animals, wandering traders, patrols, raids and spawn eggs, **babies born from breeding are named as well**.
 
 ### Easter-egg names, on your terms
 
@@ -85,7 +85,7 @@ All commands require operator permission.
 
 ## Requirements
 
-- Minecraft 1.21 / 1.21.1
+- Minecraft 1.21 / 1.21.1 / 1.21.4
 - Fabric Loader 0.15.0 or newer
 - Fabric API (required)
 - In multiplayer, the mod is required on **both the server and every client**
@@ -138,7 +138,7 @@ MIT — see [LICENSE](LICENSE).
 
 ## 動作環境
 
-Minecraft 1.21 / 1.21.1、Fabric Loader 0.15.0以上、Fabric API（必須）。
+Minecraft 1.21 / 1.21.1 / 1.21.4、Fabric Loader 0.15.0以上、Fabric API（必須）。
 マルチプレイでは、サーバーと参加者全員に導入が必要です。
 
 ## 注意

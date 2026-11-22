@@ -22,6 +22,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.SpawnEggItem;
@@ -528,7 +529,7 @@ public class AnimalGuideScreen extends Screen {
     }
 
     private static String mobName(Identifier id) {
-        return Registries.ENTITY_TYPE.getOrEmpty(id).map(type -> type.getName().getString()).orElse(id.toString());
+        return Registries.ENTITY_TYPE.getOptionalValue(id).map(type -> type.getName().getString()).orElse(id.toString());
     }
 
     private void openChat(String commandInput) {
@@ -928,7 +929,7 @@ public class AnimalGuideScreen extends Screen {
         context.drawText(textRenderer, title, 0, 0, COLOR_GOLD, true);
         matrices.pop();
 
-        LivingEntity entity = getEntity(coverMob, Registries.ENTITY_TYPE.getOrEmpty(coverMob));
+        LivingEntity entity = getEntity(coverMob, Registries.ENTITY_TYPE.getOptionalValue(coverMob));
         if (entity != null) {
             drawMob(context, center - 54, top + 52, center + 54, top + 127, 62.0F, 90.0F, 46, mouseX, mouseY, entity);
         }
@@ -982,7 +983,7 @@ public class AnimalGuideScreen extends Screen {
     /** MOBの目印として、スポーンエッグを小さく描く。卵のないMOBは名札。 */
     private void drawMobIcon(DrawContext context, Identifier id, int x, int y) {
         ItemStack icon = iconCache.computeIfAbsent(id, key -> {
-            SpawnEggItem egg = Registries.ENTITY_TYPE.getOrEmpty(key).map(SpawnEggItem::forEntity).orElse(null);
+            SpawnEggItem egg = Registries.ENTITY_TYPE.getOptionalValue(key).map(SpawnEggItem::forEntity).orElse(null);
             return new ItemStack(egg != null ? egg : Items.NAME_TAG);
         });
         MatrixStack matrices = context.getMatrices();
@@ -1004,7 +1005,7 @@ public class AnimalGuideScreen extends Screen {
 
     private void renderMobPage(DrawContext context, int mouseX, int mouseY) {
         OpenGuidePayload.Entry entry = currentEntry();
-        Optional<EntityType<?>> type = Registries.ENTITY_TYPE.getOrEmpty(entry.entityId());
+        Optional<EntityType<?>> type = Registries.ENTITY_TYPE.getOptionalValue(entry.entityId());
         int leftCenter = left + PAGE_WIDTH / 2;
 
         // 左ページ: MOBの名前と姿
@@ -1082,7 +1083,7 @@ public class AnimalGuideScreen extends Screen {
             int x = left + (slot / UNNAMED_PER_PAGE) * PAGE_WIDTH + MARGIN;
             int y = top + UNNAMED_TOP + (slot % UNNAMED_PER_PAGE) * UNNAMED_ROW_HEIGHT;
 
-            Text mobName = Registries.ENTITY_TYPE.getOrEmpty(id).map(EntityType::getName).orElse(Text.literal("?"));
+            Text mobName = Registries.ENTITY_TYPE.getOptionalValue(id).map(EntityType::getName).orElse(Text.literal("?"));
             drawInk(context, textRenderer.trimToWidth(mobName.getString(), labelWidth), x, y, COLOR_INK);
             drawInk(context, textRenderer.trimToWidth(shortId(id), labelWidth - 8), x + 8, y + 9, COLOR_INK_LIGHT);
             if (canEdit) {
@@ -1167,7 +1168,7 @@ public class AnimalGuideScreen extends Screen {
                 return Optional.empty();
             }
             try {
-                Entity entity = type.get().create(client.world);
+                Entity entity = type.get().create(client.world, SpawnReason.LOAD);
                 return entity instanceof LivingEntity living ? Optional.of(living) : Optional.empty();
             } catch (RuntimeException e) {
                 AnimalNamerMod.LOGGER.warn("[Auto Name Tag] Could not create a mob to show in the guide: {}", key, e);

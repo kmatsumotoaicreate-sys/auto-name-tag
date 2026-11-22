@@ -203,6 +203,8 @@ Tusk
 
 [breeze] # Breeze
 
+[creaking] # Creaking
+
 [creeper] # Creeper
 
 [elder_guardian] # Elder Guardian
